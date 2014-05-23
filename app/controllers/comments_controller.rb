@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(params.require(:comment).permit(:body))
     @comment.creator = current_user
     if @comment.save 
-      flash[:notice] = "Your comment was added"
+      flash[:notice] = "Your comment was added."
       redirect_to post_path(@post)
     else
       render 'posts/show'
