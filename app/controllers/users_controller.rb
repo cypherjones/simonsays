@@ -26,15 +26,12 @@ before_action :require_same_user, only: [:edit, :update]
 
   def update
     if @user.update(user_params)
-      flash[:notice] = "Youare profile has been updated."
+      flash[:notice] = "You're profile has been updated."
       redirect_to user_path(@user)
     else
       render :edit
     end
   end
-
-
-
 
   private
 
@@ -43,7 +40,7 @@ before_action :require_same_user, only: [:edit, :update]
   end
 
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find_by slug: params[:id]
   end
 
   def require_same_user
