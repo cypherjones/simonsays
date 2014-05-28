@@ -9,7 +9,7 @@ class Post <ActiveRecord::Base;
   validates :description, presence: true
   validates :url, presence: true, uniqueness: true
 
-  before_save :generate_slug
+  before_save :generate_slug!
 
   def total_votes
     up_votes - down_votes
