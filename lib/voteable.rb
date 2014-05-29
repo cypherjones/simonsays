@@ -23,7 +23,7 @@ module Voteable
 
   module ClassMethods
     def my_class_method
-      puts "THIS is a class method."
+     has_many :votes, as: :voteable
     end
   end
 end
