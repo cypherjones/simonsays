@@ -36,7 +36,7 @@ before_action :require_same_user, only: [:edit, :update]
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :time_zone)
   end
 
   def set_user
@@ -49,5 +49,4 @@ before_action :require_same_user, only: [:edit, :update]
       redirect_to root_path
     end
   end
-
 end
